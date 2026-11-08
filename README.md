@@ -6,6 +6,8 @@ The environment uses an Ubuntu VM with Nginx for the web tier, Azure App Service
 
 Azure uses the 10.20.0.0/16 network while my existing pfSense homelab uses 192.168.x.x networks. Since I plan on connecting the two later in the project, keeping the address spaces separate will make it easier. 
 
+I have already rebuilt the core Azure infrastructure with Terraform and am now studying it beyond the basics so I can get more comfortable with things like state, variables, outputs, dependencies, and cleaner infrastructure organization before moving further into the project.
+
 ## Documentation
 
 - [Architecture](docs/architecture.md)
