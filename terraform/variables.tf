@@ -141,3 +141,10 @@ variable "managed_by" {
   type    = string
   default = "Terraform"
 }
+
+
+### For security
+variable "allowed_ssh_cidr" {
+  type        = string
+  description = "Public IP allowed to SSH into the web VM"
+}
