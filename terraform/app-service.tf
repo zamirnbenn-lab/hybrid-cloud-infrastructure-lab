@@ -20,6 +20,7 @@ resource "azurerm_linux_web_app" "app" {
   resource_group_name = azurerm_resource_group.main.name
   location            = azurerm_service_plan.app.location
   service_plan_id     = azurerm_service_plan.app.id
+  virtual_network_subnet_id = azurerm_subnet.app.id
 
   site_config {
     application_stack {
