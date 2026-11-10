@@ -24,14 +24,11 @@ resource "azurerm_subnet" "app" {
   address_prefixes     = ["10.20.20.0/24"]
 
   delegation {
-    name = "app-service-delegation"
+     name = "app-service-delegation"
 
-    service_delegation {
-      name = "Microsoft.Web/serverFarms"
-
-      actions = [
-        "Microsoft.Network/virtualNetworks/subnets/action"
-      ]
+     service_delegation {
+     name = "Microsoft.Web/serverFarms"
+     actions = [ "Microsoft.Network/virtualNetworks/subnets/action" ]
     }
   }
 }
