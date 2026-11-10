@@ -72,3 +72,15 @@ resource "azurerm_network_security_rule" "allow_ssh_from_management" {
   resource_group_name         = azurerm_resource_group.main.name
   network_security_group_name = azurerm_network_security_group.data.name
 }
+
+### Attach tp NSG
+
+resource "azurerm_subnet_network_security_group_association" "web" {
+  subnet_id                 = azurerm_subnet.web.id
+  network_security_group_id = azurerm_network_security_group.web.id
+}
+
+resource "azurerm_subnet_network_security_group_association" "data" {
+  subnet_id                 = azurerm_subnet.data.id
+  network_security_group_id = azurerm_network_security_group.data.id
+}
