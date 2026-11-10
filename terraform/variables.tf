@@ -1,3 +1,5 @@
+### For network
+
 variable "location" {
   type    = string
   default = "North Central US"
@@ -147,4 +149,9 @@ variable "managed_by" {
 variable "allowed_ssh_cidr" {
   type        = string
   description = "Public IP allowed to SSH into the web VM"
+}
+
+### For compute
+variable "ssh_public_key_path" {
+  type = string
 }
