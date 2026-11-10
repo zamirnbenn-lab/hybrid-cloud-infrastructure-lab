@@ -5,6 +5,14 @@ resource "azurerm_service_plan" "app" {
 
   os_type  = "Linux"
   sku_name = "B1"
+
+  tags = {
+    Environment = var.environment
+    Project     = var.project_name
+    Owner       = var.owner
+    ManagedBy   = var.managed_by
+    Tier        = "App"
+  }
 }
 
 resource "azurerm_linux_web_app" "app" {
@@ -17,5 +25,13 @@ resource "azurerm_linux_web_app" "app" {
     application_stack {
       python_version = "3.12"
     }
+  }
+
+  tags = {
+    Environment = var.environment
+    Project     = var.project_name
+    Owner       = var.owner
+    ManagedBy   = var.managed_by
+    Tier        = "App"
   }
 }
