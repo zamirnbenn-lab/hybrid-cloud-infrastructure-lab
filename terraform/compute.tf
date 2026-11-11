@@ -38,9 +38,7 @@ resource "azurerm_linux_virtual_machine" "web" {
   size                = var.web_vm_size
   admin_username      = var.admin_username
 
-  network_interface_ids = [
-    azurerm_network_interface.web.id
-  ]
+  network_interface_ids = [ azurerm_network_interface.web.id  ]
 
   admin_ssh_key {
     username   = var.admin_username
