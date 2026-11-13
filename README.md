@@ -8,8 +8,11 @@ Azure uses the 10.20.0.0/16 network while my existing pfSense homelab uses 192.1
 
 ## Documentation
 
+Each link below leads to more detail about that part of the lab, including design choices and explanations of the code.
+
 - [Architecture](docs/architecture.md)
 - [Networking](docs/networking.md)
 - [Service Choices](docs/service-choices.md)
 - [Network Security](docs/network-security.md)
 - [Terraform](terraform)
+- [Bash Scripts](scripts)
