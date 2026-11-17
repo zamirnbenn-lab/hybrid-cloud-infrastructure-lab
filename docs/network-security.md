@@ -1,19 +1,18 @@
 # Network Security
 
-The network rules are based on only giving each tier the access it actually needs.
 
-The web VM accepts normal web traffic through HTTP and HTTPS. SSH access is restricted instead of being open to any source.
+The network rules are set up so each tier only receives the traffic it needs.
 
-The PostgreSQL VM does not have a public IP because nothing on the internet should connect directly to the database.
+The web tier allows HTTP on port 80 and HTTPS on port 443 since it handles incoming web traffic. SSH on port 22 is restricted to a single source address instead of being open to the internet.
 
-PostgreSQL uses TCP port 5432. That traffic is allowed from the application subnet so App Service can reach the database.
+![Web](../images/security/nsg-web.png) 
 
-The web tier does not need direct database access, so there is no rule allowing it.
+The data tier is more restricted. PostgreSQL traffic on port 5432 is only allowed from the application subnet at 10.20.20.0/24. SSH is allowed from the management subnet at 10.20.40.0/24.
 
-SSH access to the data tier is tied to the management network rather than being opened broadly.
+![Data](../images/security/NSG-data.png)
 
-![Data NSG Inbound Rules](../images/security/nsg-data-inbound.png)
+The database does not need HTTP or HTTPS access, and anything that does not match an allowed rule falls through to Azure's default inbound deny rule.
 
-Anything that does not match an allowed inbound rule falls through to Azure's default deny rule.
+This keeps the normal traffic path limited to:
 
-Microsoft Defender for Cloud is also enabled so I can review Azure's security recommendations alongside the controls I configure myself.
+Web → App → Data
