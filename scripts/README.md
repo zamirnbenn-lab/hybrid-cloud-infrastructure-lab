@@ -21,3 +21,43 @@ The script checks system uptime, used memory, disk usage, and the status of Ngin
 The collected values and final totals are written to system_health.log so the results can be reviewed later.
 
 This script is meant be simple and can be expanded with additional checks when needed.
+
+## Service Check
+
+[service-check.sh](system-check.sh) checks whether a Linux service is currently running.
+
+The script accepts the service name as an argument. If the service is already active, it reports its status. If the service is inactive, the script attempts to restart it and checks again to confirm whether the restart was successful.
+
+This can be used with services such as Nginx or PostgreSQL as more services are added to the lab.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
