@@ -20,4 +20,4 @@ The script checks system uptime, used memory, disk usage, and the status of Ngin
 
 The collected values and final totals are written to system_health.log so the results can be reviewed later.
 
-This script is meant to be a simple starting point for Linux monitoring and can be expanded with additional checks as the lab grows.
+This script is meant be simple and can be expanded with additional checks when needed.
