@@ -11,3 +11,13 @@ The script creates a backup directory if needed and copies each configuration fi
 Each file’s result is recorded in ***backup-report.log***. At the end, the script displays totals for successful backups, skipped files, missing files, and failed copies. It exits with a failure status if any files are missing or fail to copy.
 
 The script currently accepts source files by filename from the current directory.
+
+## System Health Check
+
+[system-check.sh](system-health.sh) checks basic Linux system health information and records the results in a log file.
+
+The script checks system uptime, used memory, disk usage, and the status of Nginx. Each command is checked for success, and the script keeps track of how many checks pass or fail.
+
+The collected values and final totals are written to system_health.log so the results can be reviewed later.
+
+This script is meant to be a simple starting point for Linux monitoring and can be expanded with additional checks as the lab grows.
