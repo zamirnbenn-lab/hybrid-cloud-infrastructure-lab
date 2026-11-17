@@ -24,7 +24,7 @@ This script is meant be simple and can be expanded with additional checks when n
 
 ## Service Check
 
-[service-check.sh](system_check.sh) checks whether a Linux service is currently running.
+[service-check.sh](service_check.sh) checks whether a Linux service is currently running.
 
 The script accepts the service name as an argument. If the service is already active, it reports its status. If the service is inactive, the script attempts to restart it and checks again to confirm whether the restart was successful.
 
