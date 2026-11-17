@@ -53,7 +53,7 @@ resource "azurerm_network_security_rule" "allow_postgresql_from_app" {
   protocol                    = "Tcp"
   source_port_range           = "*"
   destination_port_range      = "5432"
-  source_address_prefix       = var.app_subnet_address
+  source_address_prefix       = azurerm_subnet.app.address_prefixes[0]
   destination_address_prefix  = "*"
   resource_group_name         = azurerm_resource_group.main.name
   network_security_group_name = azurerm_network_security_group.data.name
@@ -67,7 +67,7 @@ resource "azurerm_network_security_rule" "allow_ssh_from_management" {
   protocol                    = "Tcp"
   source_port_range           = "*"
   destination_port_range      = "22"
-  source_address_prefix       = var.management_subnet_address
+  source_address_prefix       = azurerm_subnet.management.address_prefixes[0]
   destination_address_prefix  = "*"
   resource_group_name         = azurerm_resource_group.main.name
   network_security_group_name = azurerm_network_security_group.data.name
