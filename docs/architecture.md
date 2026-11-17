@@ -6,7 +6,7 @@ Traffic follows this path:
 
 Internet → Web VM → App Service → PostgreSQL VM
 
-![Azure Resources](../images/architecture/ResourceGroup_Dashboard.png)
+![Azure Resources](../images/architecture/Resources.png)
 
 The web tier runs Nginx on an Ubuntu VM and handles incoming web traffic.
 
