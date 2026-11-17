@@ -14,7 +14,7 @@ The script currently accepts source files by filename from the current directory
 
 ## System Health Check
 
-[system-check.sh](system-health.sh) checks basic Linux system health information and records the results in a log file.
+[system_health.sh](scripts/system_health.sh) checks basic Linux system health information and records the results in a log file.
 
 The script checks system uptime, used memory, disk usage, and the status of Nginx. Each command is checked for success, and the script keeps track of how many checks pass or fail.
 
